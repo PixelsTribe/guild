@@ -4,9 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pixels Tribe</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+        }
+
+        .bg-image {
+            background-image: url('Tribe.JPG');
+            height: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+        }
+
+        .centered-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to Pixels Tribe</h1>
-    <p>This is the Pixels Tribe Guild Meeting Website.</p>
+
+<div class="bg-image">
+    <div class="centered-content">
+        <h1>Welcome to Pixels Tribe</h1>
+        <p>Enter your wallet address below:</p>
+        <input type="text" id="walletAddress" placeholder="Wallet Address">
+        <!-- Add more elements here if needed -->
+    </div>
+</div>
+
 </body>
 </html>
