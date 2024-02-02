@@ -4,9 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pixels Tribe</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+        }
+
+        .bg-image {
+            background-image: url('Tribe.JPG');
+            height: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .input-field {
+            max-width: 300px;
+            border: 2px solid #fff;
+            padding: 10px;
+            font-size: 16px;
+            color: #fff;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 5px;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to Pixels Tribe</h1>
-    <p>This is the Pixels Tribe Guild Meeting Website.</p>
+
+<div class="bg-image">
+    <input type="text" class="input-field" id="walletAddress" placeholder="Enter Wallet Address" onkeypress="checkForEnter(event)">
+</div>
+
+<script>
+    function checkForEnter(event) {
+        if (event.key === "Enter") {
+            var walletAddress = document.getElementById("walletAddress").value;
+            if(walletAddress) {
+                // Redirect to a Ronin blockchain explorer or similar page
+                window.open(`https://explorer.roninchain.com/address/${walletAddress}?t=tokens`, '_blank');
+            }
+        }
+    }
+</script>
+
 </body>
 </html>
